@@ -1,0 +1,110 @@
+.hero-section {
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding-top: 3rem;
+    overflow: hidden; /* para evitar que los íconos se desborden */
+  }
+  
+  .hero-content {
+    width: 80%;
+    margin-left: 10rem;
+    color: white;
+    text-align: left;
+    max-width: none;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
+    max-width: 600px;
+    line-height: 1.4;
+  }
+  
+  /* POSICIONA LOS ICONOS AL FONDO */
+  .hero-icons-container {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;                         /* mueve el contenedor al centro */
+    transform: translateX(-50%);       /* lo centra horizontalmente */
+    width: 80%;                        /* ancho relativo centrado */
+    display: flex;
+    justify-content: space-between;   /* espacio igual entre íconos */
+    padding: 0 4rem;                   /* espacio interno opcional */
+    flex-wrap: nowrap;                /* evita que se rompa en otra línea */
+  }
+  
+  
+  
+  
+  /* ICONOS INDIVIDUALES */
+  .hero-icon-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 180px;
+    text-align: center;
+    min-height: 260px; /* puedes ajustar esto según tus textos */
+    padding-bottom: 4rem; /* espacio para que el círculo no se encime */
+  }
+  
+  
+  .hero-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-icon-text {
+    font-size: 1rem;
+    color: white;
+  }
+  
+
+  .hero-circles-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-icon-circle {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  background-color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-icon-circle img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.hero-icon-circle a {
+    display: flex; /* para que el enlace ocupe todo el círculo */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
