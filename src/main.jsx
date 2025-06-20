@@ -1,9 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './container/App.jsx'
-import './styles/global.css';
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './container/App'
+import './styles/global.css'
+import './styles/globalTypography.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+// Inicializar AOS
+AOS.init({
+  duration: 1000,
+  once: true,
+  offset: 100
+});
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
+  </React.StrictMode>,
 )

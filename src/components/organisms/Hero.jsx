@@ -1,7 +1,7 @@
 // src/components/organisms/Hero.jsx
 import HeroTextBlock from '../molecules/HeroTextBlock';
 import ImageWithText from '../molecules/ImageWithText';
-import CircleWithImage from '../molecules/CircleWithImage';
+import SocialButton from '../molecules/SocialButton';
 import heroImage from '../../assets/hero.png';
 import icon from '../../assets/iconLogo.png';
 import circleIcon1 from '../../assets/Facebook.png';
@@ -10,33 +10,45 @@ import circleIcon3 from '../../assets/WhatsApp.png';
 import '../../styles/hero.css';
 
 const Hero = () => (
-  <section
-    className="hero-section"
-    style={{
-      backgroundImage: `url(${heroImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}
-  >
+  <section className="hero-section">
+    <div 
+      className="hero-background"
+      style={{
+        backgroundImage: `url(${heroImage})`,
+      }}
+    />
+    <div className="hero-overlay" />
+    
     <div className="hero-content">
       <HeroTextBlock />
     </div>
 
     <div className="hero-icons-container">
-      <div className="hero-icon-block">
+      <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="100">
         <ImageWithText src={icon} alt="icono 1" text="Un recuerdo para siempre" />
-        <CircleWithImage src={circleIcon1} alt="círculo 1" href="https://pagina1.com" />
+        <SocialButton 
+          icon={circleIcon1}
+          alt="Facebook Ámbar Hacienda"
+          href="https://www.facebook.com/ambar.haciendamx/"
+        />
       </div>
 
-      <div className="hero-icon-block">
+      <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="200">
         <ImageWithText src={icon} alt="icono 2" text="El amor verdadero es cuando ambos piensan que son los afortunados" />
-        <CircleWithImage src={circleIcon2} alt="círculo 2" href="https://pagina2.com" />
+        <SocialButton 
+          icon={circleIcon2}
+          alt="Instagram Ámbar Hacienda"
+          href="https://www.instagram.com/ambar.haciendamx/"
+        />
       </div>
 
-      <div className="hero-icon-block">
+      <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="300">
         <ImageWithText src={icon} alt="icono 3" text="La respuesta es amor" />
-        <CircleWithImage src={circleIcon3} alt="círculo 3" href="https://pagina3.com" />
+        <SocialButton 
+          icon={circleIcon3}
+          alt="WhatsApp Ámbar Hacienda"
+          href="https://wa.me/529613668435"
+        />
       </div>
     </div>
   </section>
