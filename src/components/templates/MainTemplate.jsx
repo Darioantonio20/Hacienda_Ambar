@@ -1,11 +1,12 @@
 // src/components/templates/MainTemplate.jsx
 import Hero from '../organisms/Hero';
+import Packages from '../organisms/Packages';
 
 const MainTemplate = () => {
   return (
     <>
       <Hero />
-      {/* Aquí puedes añadir más secciones en el futuro */}
+      <Packages />
     </>
   );
 };
