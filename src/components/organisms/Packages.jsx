@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PackageCard from '../atoms/PackageCard';
 import '../../styles/packages.css';
+import heroImage from '../../assets/hero.png';
 
 const Packages = () => {
   const [activeFilter, setActiveFilter] = useState('todos');
@@ -9,42 +10,42 @@ const Packages = () => {
     {
       id: 1,
       type: 'exteriores',
-      image: 'src/assets/hero.png',
+      image: heroImage, 
       title: 'Gold 200',
       description: 'Promoción especial para eventos en exteriores'
     },
     {
       id: 2,
       type: 'exteriores',
-      image: 'src/assets/hero.png',
+      image: heroImage,
       title: 'DJ & Pista LED',
       description: 'Promoción con pista LED incluida'
     },
     {
       id: 3,
       type: 'interiores',
-      image: 'src/assets/hero.png',
+      image: heroImage,
       title: 'Platinum 200',
       description: 'Promoción para eventos en interiores'
     },
     {
       id: 4,
       type: 'exteriores',
-      image: 'src/assets/hero.png',
+      image: heroImage,
       title: 'Sesiones Fotográficas',
       description: 'Sesiones profesionales en locación'
     },
     {
       id: 5,
       type: 'interiores',
-      image: 'src/assets/hero.png',
+      image: heroImage,
       title: 'Entelado',
       description: 'Decoración con telas y luces'
     },
     {
       id: 6,
       type: 'interiores',
-      image: 'src/assets/hero.png',
+      image: heroImage,
       title: 'Básico 200',
       description: 'Paquete básico para eventos'
     }
