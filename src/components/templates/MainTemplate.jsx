@@ -2,6 +2,7 @@
 import Hero from '../organisms/Hero';
 import Packages from '../organisms/Packages';
 import Gallery from '../organisms/Gallery';
+import Team from '../organisms/Team';
 
 const MainTemplate = () => {
   return (
@@ -9,6 +10,7 @@ const MainTemplate = () => {
       <Hero />
       <Packages />
       <Gallery />
+      <Team />
     </>
   );
 };

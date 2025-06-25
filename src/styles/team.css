@@ -1,0 +1,246 @@
+.team-section {
+  padding: 6rem 2rem;
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.team-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 600px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.team-card:hover::before {
+  opacity: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.member-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .member-avatar {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.team-card:hover .member-avatar img {
+  transform: scale(1.1);
+}
+
+.member-info {
+  margin-bottom: 1.5rem;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.member-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.social-link.linkedin:hover {
+  background: #0077b5;
+}
+
+.social-link.github:hover {
+  background: #333;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+  }
+
+  .team-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 350px;
+  }
+  
+  .member-avatar {
+    width: 130px;
+    height: 130px;
+  }
+
+  .team-card {
+    max-width: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 4rem 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+  }
+
+  .team-card {
+    padding: 1.5rem;
+  }
+  
+  .member-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-section {
+    padding: 3rem 1rem;
+  }
+
+  .team-grid {
+    gap: 1rem;
+  }
+
+  .team-card {
+    padding: 1.25rem;
+  }
+
+  .member-name {
+    font-size: 1.25rem;
+  }
+
+  .member-role {
+    font-size: 0.9rem;
+  }
+  
+  .member-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-card:last-child {
+    max-width: 250px;
+  }
+} 
