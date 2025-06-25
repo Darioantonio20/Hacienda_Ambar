@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PackageCard from '../atoms/PackageCard';
 import '../../styles/packages.css';
-import heroImage from '../../assets/hero.png';
+import heroImage from '../../assets/hero.webp';
 
 const Packages = () => {
   const [activeFilter, setActiveFilter] = useState('todos');
