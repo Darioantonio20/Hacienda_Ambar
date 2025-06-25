@@ -4,15 +4,25 @@
   height: 100vh;
   overflow: hidden;
   background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
 }
 
 .divbackground {
   position: relative;
   width: 100%;
+  flex: 1;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  z-index: 1;
 }
 
 .overlay {
@@ -22,6 +32,12 @@
   align-items: center;
   justify-content: flex-start;
   padding: 40px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 2;
 }
 
 .text-content {
@@ -29,15 +45,16 @@
   color: white;
   text-align: left;
   padding-left: 5%;
+  z-index: 2;
 }
 
 .text-content h1 {
-  font-size: 3rem; /* o ajusta según tu preferencia */
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 1.5rem;
 }
 
 .descripcion {
-  font-size: 1.5rem; /* antes 1rem */
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 400;
   margin-top: 20px;
   line-height: 1.6;
@@ -61,27 +78,198 @@
   overflow: hidden;
   cursor: pointer;
   border: 2px solid white;
-  transition: transform 0.2s;
+  transition: transform 0.2s, opacity 0.3s;
+  opacity: 0.7;
+  position: relative;
 }
 
 .divcard:hover {
   transform: scale(1.05);
+  opacity: 1;
 }
 
-.divcard .hero-icon {
+.divcard-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .galeria > h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: #ffffff;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-filters {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.gallery-filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gallery-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.gallery-filter-btn.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .divbackground {
+    min-height: 60vh;
+  }
+
+  .overlay {
+    padding: 30px;
+  }
+
+  .text-content {
+    max-width: 500px;
+  }
+
+  .divcards-container {
+    right: 20px;
+    gap: 15px;
+  }
+
+  .divcard {
+    width: 120px;
+    height: 85px;
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .divbackground {
+    height: 50vh;
+    min-height: 400px;
+    flex: none;
+  }
+
+  .background-image {
+    height: 100%;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .text-content {
+    max-width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .divcards-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: black;
+  }
+
+  .divcard {
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+  }
+
+  .gallery-filters {
+    margin: 0.75rem 0;
+  }
+
+  .gallery-filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria > h1 {
+    margin: 1rem 0;
+    padding: 0 1rem;
+  }
+
+  .divbackground {
+    height: 40vh;
+    min-height: 300px;
+  }
+
+  .overlay {
+    padding: 15px;
+  }
+
+  .text-content h1 {
+    margin-bottom: 1rem;
+  }
+
+  .descripcion {
+    margin-top: 10px;
+  }
+
+  .divcards-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+  }
+
+  .divcard {
+    padding-bottom: 75%;
+  }
+
+  .gallery-filters {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .gallery-filter-btn {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
 }

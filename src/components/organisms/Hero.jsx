@@ -24,31 +24,44 @@ const Hero = () => (
     </div>
 
     <div className="hero-icons-container">
-      <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="100">
-        <ImageWithText src={icon} alt="icono 1" text="Un recuerdo para siempre" />
-        <SocialButton 
-          icon={circleIcon1}
-          alt="Facebook Ámbar Hacienda"
-          href="https://www.facebook.com/ambar.haciendamx/"
-        />
+      {/* Primera fila: Iconos con texto */}
+      <div className="icons-row">
+        <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="100">
+          <ImageWithText src={icon} alt="icono 1" text="Un recuerdo para siempre" />
+        </div>
+
+        <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="200">
+          <ImageWithText src={icon} alt="icono 2" text="El amor verdadero es cuando ambos piensan que son los afortunados" />
+        </div>
+
+        <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="300">
+          <ImageWithText src={icon} alt="icono 3" text="La respuesta es amor" />
+        </div>
       </div>
 
-      <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="200">
-        <ImageWithText src={icon} alt="icono 2" text="El amor verdadero es cuando ambos piensan que son los afortunados" />
-        <SocialButton 
-          icon={circleIcon2}
-          alt="Instagram Ámbar Hacienda"
-          href="https://www.instagram.com/ambar.haciendamx/"
-        />
-      </div>
-
-      <div className="hero-icon-block" data-aos="fade-up" data-aos-delay="300">
-        <ImageWithText src={icon} alt="icono 3" text="La respuesta es amor" />
-        <SocialButton 
-          icon={circleIcon3}
-          alt="WhatsApp Ámbar Hacienda"
-          href="https://wa.me/529613668435"
-        />
+      {/* Segunda fila: Redes sociales */}
+      <div className="social-icons-row" data-aos="fade-up" data-aos-delay="400">
+        <div className="social-button-wrapper">
+          <SocialButton 
+            icon={circleIcon1}
+            alt="Facebook Ámbar Hacienda"
+            href="https://www.facebook.com/ambar.haciendamx/"
+          />
+        </div>
+        <div className="social-button-wrapper">
+          <SocialButton 
+            icon={circleIcon2}
+            alt="Instagram Ámbar Hacienda"
+            href="https://www.instagram.com/ambar.haciendamx/"
+          />
+        </div>
+        <div className="social-button-wrapper">
+          <SocialButton 
+            icon={circleIcon3}
+            alt="WhatsApp Ámbar Hacienda"
+            href="https://wa.me/529613668435"
+          />
+        </div>
       </div>
     </div>
   </section>

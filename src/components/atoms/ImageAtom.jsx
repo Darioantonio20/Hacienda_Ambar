@@ -1,5 +1,5 @@
-const ImageAtom = ({ src, alt }) => (
-    <img src={src} alt={alt} className="hero-icon" />
+const ImageAtom = ({ src, alt, className }) => (
+    <img src={src} alt={alt} className={className} />
   );
   
   export default ImageAtom;

@@ -68,15 +68,28 @@
     width: 90%;
     max-width: 1200px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     padding: 0 2rem;
-    flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem;
     z-index: 2;
   }
   
+  .icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
   
-  
+  .social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
   
   /* ICONOS INDIVIDUALES */
   .hero-icon-block {
@@ -85,11 +98,10 @@
     flex-direction: column;
     align-items: center;
     flex: 1;
-    min-width: 280px;
-    max-width: 350px;
+    min-width: 200px;
+    max-width: 300px;
     text-align: center;
-    min-height: 260px; /* puedes ajustar esto según tus textos */
-    padding-bottom: 4rem; /* espacio para que el círculo no se encime */
+    min-height: 200px;
     transition: transform 0.3s ease;
   }
   
@@ -177,41 +189,153 @@
     margin-left: 5rem;
     width: 90%;
   }
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    margin-left: 2rem;
-    width: 90%;
-  }
 
   .hero-icons-container {
-    justify-content: center;
     padding: 0 1rem;
+    gap: 2rem;
   }
 
   .hero-icon-block {
-    min-width: 250px;
+    min-width: 180px;
+  }
+
+  .social-button-atropos {
+    width: 90px;
+    height: 90px;
+  }
+
+  .social-button-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-icons-container {
+    bottom: 2rem;
+    gap: 2rem;
+  }
+
+  .icons-row {
+    gap: 1.5rem;
+  }
+
+  .social-icons-row {
+    gap: 1.5rem;
+  }
+
+  .hero-icon-block {
+    min-width: 160px;
+  }
+
+  .social-button-atropos {
+    width: 80px;
+    height: 80px;
+  }
+
+  .social-button-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+    padding-top: 2rem;
+  }
+
+  .hero-content {
+    margin-left: 1rem;
+    width: 95%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-icons-container {
+    position: relative;
+    bottom: auto;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  .icons-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .social-icons-row {
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .hero-icon-block {
+    min-width: calc(50% - 1rem);
+    min-height: 180px;
+  }
+
+  .social-button-atropos {
+    width: 70px;
+    height: 70px;
+  }
+
+  .social-button-icon {
+    width: 35px;
+    height: 35px;
   }
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    padding-top: 1.5rem;
+  }
+
   .hero-content {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     width: 95%;
+  }
+
+  .hero-icons-container {
+    width: 100%;
+    padding: 0 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .icons-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-icons-row {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
   }
 
   .hero-icon-block {
     min-width: 100%;
+    max-width: 280px;
+    min-height: 160px;
+  }
+
+  .social-button-atropos {
+    width: 60px;
+    height: 60px;
+  }
+
+  .social-button-icon {
+    width: 30px;
+    height: 30px;
   }
 }
 
 /* Estilos para los botones sociales con Atropos */
 .social-button-atropos {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  bottom: 0;
+  width: 100px;
+  height: 100px;
+  position: relative;
 }
 
 .social-button-container {
@@ -230,8 +354,8 @@
 }
 
 .social-button-icon {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
