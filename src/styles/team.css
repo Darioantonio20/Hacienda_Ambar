@@ -162,6 +162,28 @@
   background: #333;
 }
 
+.company-logo {
+  width: 180px;
+  height: auto;
+  margin: 1rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.company-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .company-logo img {
+  transform: scale(1.05);
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .team-grid {
@@ -183,6 +205,11 @@
 
   .team-card {
     max-width: none;
+  }
+
+  .company-logo {
+    width: 160px;
+    margin: 0.75rem auto 0;
   }
 }
 
@@ -211,6 +238,11 @@
     grid-column: 1 / -1;
     justify-self: center;
     max-width: 280px;
+  }
+
+  .company-logo {
+    width: 140px;
+    margin: 0.75rem auto 0;
   }
 }
 
@@ -242,5 +274,10 @@
 
   .team-card:last-child {
     max-width: 250px;
+  }
+
+  .company-logo {
+    width: 120px;
+    margin: 0.5rem auto 0;
   }
 } 

@@ -2,6 +2,7 @@ import React from 'react';
 import '../../styles/team.css';
 import ImgPerfilDario from '../../assets/Team/ImgPerfilDario.png';
 import ImgPerfilCarlos from '../../assets/Team/ImgPerfilCarlos.jpeg';
+import LogoNucuSoft from '../../assets/Team/LogoEmpresaNucuSoft/logoNucuSoft.png';
 
 const Team = () => {
   const teamMembers = [
@@ -62,6 +63,16 @@ const Team = () => {
               <div className="member-info">
                 <h3 className="member-name">{member.name}</h3>
                 <p className="member-role">{member.role}</p>
+                <div className="company-logo">
+                  <img 
+                    src={LogoNucuSoft} 
+                    alt="NucuSoft Logo" 
+                    onError={(e) => {
+                      console.error('Error loading logo:', e);
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
               </div>
               
               {(member.linkedin || member.github) && (
