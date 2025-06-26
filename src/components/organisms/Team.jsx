@@ -1,8 +1,10 @@
 import React from 'react';
 import '../../styles/team.css';
+import LogoNucuSoft from '../../assets/Team/LogoEmpresaNucuSoft/logoNucuSoft.png';
 import ImgPerfilDario from '../../assets/Team/ImgPerfilDario.png';
 import ImgPerfilCarlos from '../../assets/Team/ImgPerfilCarlos.jpeg';
-import LogoNucuSoft from '../../assets/Team/LogoEmpresaNucuSoft/logoNucuSoft.png';
+import ImgPerfilPedro from '../../assets/Team/ImgPerfilPedro.png';
+import ImgPerfilJorge from '../../assets/Team/ImgPerfilJorge.png';
 
 const Team = () => {
   const teamMembers = [
@@ -26,25 +28,25 @@ const Team = () => {
       id: 3,
       name: "Pedro Portillo Rodríguez",
       role: "Backend Developer - Ing. en Software",
-      linkedin: "https://www.linkedin.com/in/pedro-portillo-rodriguez-b32703267/",
-      github: "https://github.com/PedroPortilloRodriguez",
-      image: "https://ui-avatars.com/api/?name=Pedro+Portillo&background=random"
+      linkedin: "https://www.linkedin.com/in/pedro-portillo-rodriguez-8935982b8/",
+      github: "https://github.com/PedroPortillo0",
+      image: ImgPerfilPedro
     },
     {
       id: 4,
       name: "Alan Emanuel Díaz Coutiño",
       role: "Backend Developer - Ing. en Software",
-      linkedin: "https://www.linkedin.com/in/alan-emmanuel-diaz-coutino-b32703267/",
-      github: "https://github.com/AlanEmanuelDiazCoutino",
+      linkedin: "https://www.linkedin.com/in/alan-emmanuel-diaz-813b13224/",
+      github: "https://github.com/AlanCoutinhoD",
       image: "https://ui-avatars.com/api/?name=Alan+Diaz&background=random"
     },
     {
       id: 5,
       name: "Jorge Alexis Arredondo Juarez",
       role: "Analista de Requerimientos - Ing. en Software",
-      linkedin: "https://www.linkedin.com/in/jorge-alexis-arredondo-juarez-b32703267/",
-      github: "https://github.com/JorgeAlexisArredondoJuarez",
-      image: "https://ui-avatars.com/api/?name=Jorge+Arredondo&background=random"
+      linkedin: "https://www.linkedin.com/in/jorge-alexis-arredondo-juárez-a3b830228/",
+      github: "https://github.com/AlexisJuarez2227",
+      image: ImgPerfilJorge
     }
   ];
 
