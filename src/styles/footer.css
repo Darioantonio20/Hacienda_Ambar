@@ -1,0 +1,280 @@
+/* src/styles/footer.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.footer {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+  color: #a0a0a0;
+  overflow: hidden;
+  border-top: 1px solid rgba(60, 60, 60, 0.3);
+  padding: 3rem 0 2rem;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(40, 40, 40, 0.4) 0%, transparent 50%),
+              radial-gradient(circle at 80% 50%, rgba(30, 30, 30, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out;
+}
+
+.footer-text {
+  position: relative;
+}
+
+.footer-text p {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #666666, #888888, #999999);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  animation: gradientShift 3s ease-in-out infinite;
+  position: relative;
+}
+
+.footer-text p::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #555555, #777777);
+  animation: underlineExpand 2s ease-out 0.5s forwards;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.footer-logo::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(50, 50, 50, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  z-index: -1;
+}
+
+.footer-logo-img {
+  height: 45px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5)) brightness(0.9) contrast(1.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.1) rotate(2deg);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7)) 
+          drop-shadow(0 0 20px rgba(60, 60, 60, 0.4))
+          brightness(1.1) contrast(1.2);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.2;
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Efectos de hover interactivos */
+.footer-content:hover .footer-text p {
+  animation-duration: 1.5s;
+  background: linear-gradient(45deg, #777777, #999999, #aaaaaa);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-content:hover .footer-logo::before {
+  animation-duration: 1s;
+  background: radial-gradient(circle, rgba(70, 70, 70, 0.4) 0%, transparent 70%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1.5rem;
+  }
+  
+  .footer-container {
+    padding: 0 1.5rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-text p {
+    font-size: 1.1rem;
+  }
+  
+  .footer-logo-img {
+    height: 40px;
+  }
+  
+  .footer-logo::before {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0 1rem;
+  }
+  
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .footer-content {
+    gap: 1.5rem;
+  }
+  
+  .footer-text p {
+    font-size: 1rem;
+  }
+  
+  .footer-logo-img {
+    height: 35px;
+  }
+  
+  .footer-logo::before {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Modo oscuro ultra */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: linear-gradient(135deg, #000000 0%, #111111 50%, #222222 100%);
+  }
+  
+  .footer-text p {
+    background: linear-gradient(45deg, #555555, #777777, #888888);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Efectos adicionales para mejor UX con tema oscuro */
+.footer-content > * {
+  animation-delay: 0.2s;
+}
+
+.footer-logo {
+  animation-delay: 0.4s;
+}
+
+/* Efecto de partículas sutiles */
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(40, 40, 40, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(30, 30, 30, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 50% 10%, rgba(35, 35, 35, 0.1) 0%, transparent 20%);
+  animation: subtleParticles 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes subtleParticles {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(1.05);
+  }
+} 

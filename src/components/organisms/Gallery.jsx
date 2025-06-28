@@ -86,13 +86,13 @@ const Gallery = () => {
           className={`gallery-filter-btn ${categoriaActiva === 'sesiones' ? 'active' : ''}`}
           onClick={() => cambiarCategoria('sesiones')}
         >
-          Sesiones fotográficas
+          Galería de fotos
         </button>
         <button 
           className={`gallery-filter-btn ${categoriaActiva === 'eventos' ? 'active' : ''}`}
           onClick={() => cambiarCategoria('eventos')}
         >
-          Eventos
+          Montajes
         </button>
       </div>
 
